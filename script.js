@@ -65,6 +65,7 @@ const Elements = {
     gpioVoltage: null,
     pirBinary: null,
     pirJsonPreview: null,
+    pirPayloadBit: null,
     
     // Application
     appDisplay: null,
@@ -130,6 +131,7 @@ function cacheElements() {
     Elements.gpioVoltage = document.getElementById('gpioVoltage');
     Elements.pirBinary = document.getElementById('pirBinary');
     Elements.pirJsonPreview = document.getElementById('pirJsonPreview');
+    Elements.pirPayloadBit = document.getElementById('pirPayloadBit');
     
     // Application elements
     Elements.appDisplay = document.getElementById('appDisplay');
@@ -383,8 +385,7 @@ function updateDigitalDisplay() {
     setElementText(Elements.gpioState, state);
     setElementText(Elements.gpioVoltage, voltage);
     setElementText(Elements.pirBinary, binary);
-    setElementText(Elements.pirJsonPreview, 
-        `{"pir": ${binary}, "motion": ${detected}, "sensor": "PIR1"}`);
+    setElementText(Elements.pirPayloadBit, binary);
     
     // Application values
     setElementText(Elements.appDisplay, status);
